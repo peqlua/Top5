@@ -84,7 +84,7 @@
 .jelly-container {
 	width: 100%;
 	position: relative;
-	height: 500px ;
+	height: 600px ;
 	overflow: hidden;
 	
 }
@@ -124,7 +124,7 @@
     animation: facing-movement 10s infinite linear;
 }
 
-%jelly-eye{
+.jelly-eye{
 	content: '';
     position: absolute;
     height: 15px;
@@ -135,25 +135,39 @@
     animation: eyes-blink 3.5s infinite linear;
 }
 
+/* O elemento "antes" */
+.jelly-eyes::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 60px;
+}
+
+/* O elemento "depois" */
+.jelly-eyes::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: -70px;
+}
+
 .jelly-eyes {
 	position: absolute;
     top: -40px;
     animation: eyes-movement 10s infinite linear;
 	
-	&:before{
-		@extend %jelly-eye;
-		left: 60px;
-	}
-    
-    &:after{
-    	@extend %jelly-eye;
-    	left: -70px;
-    }
-
 
 }
 
-%jelly-hand{
+.jelly-hand{
 	content: '';
 	position: absolute;
 	height: 50px;
@@ -163,20 +177,40 @@
 	box-shadow: 0px 5px 6px #3B949B;
 }
 
-.jelly-hands{
-	position: absolute;
-    top: 65px;
-	
-	&:before{
-		@extend %jelly-hand;
-		left: 110px;
-	}
-    
-    &:after{
-    	@extend %jelly-hand;
-    	left: -155px;
-    }
+/* Estilo comum das mãos */
+.jelly-hand {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
 }
+
+/* O elemento "antes" */
+.jelly-hands::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: #e26767;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 110px;
+}
+
+/* O elemento "depois" */
+.jelly-hands::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background-color: #e26767;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: -155px;
+}
+
 
 .jelly-mouth {
 	position: absolute;
@@ -255,123 +289,154 @@ div[class^="bubble-"] {
 	height: 1px;
 	width: 1px;
 	position: absolute;
-	background-color:rgba(0, 141, 210, 0.3);
+	background-color: rgba(0, 141, 210, 0.3);
 	border-radius: 50%;
 	transform: translateX(-50%);
+}
 
-	&:after {
-		content: '';
-	    position: absolute;
-	    height: 85%;
-	    width: 85%;
-	    border-top: 1px solid rgba(255, 255, 255, 0.63);
-	    border-radius: 50%;
-	    left: 50%;
-	    top: 50%;
-	    transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+div[class^="bubble-"]::after {
+	content: '';
+	position: absolute;
+	height: 85%;
+	width: 85%;
+	border-top: 1px solid rgba(255, 255, 255, 0.63);
+	border-radius: 50%;
+	left: 50%;
+	top: 50%;
+	transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+}
+
+/* Substituição do random() com valores fixos */
+.bubble-1 {
+	bottom: 7px;
+	left: 10%;
+	animation: bubble-movement 4s infinite ease-in 0s;
+}
+
+.bubble-2 {
+	bottom: 3px;
+	left: 25%;
+	animation: bubble-movement 4s infinite ease-in 0.3s;
+}
+
+.bubble-3 {
+	bottom: 8px;
+	left: 40%;
+	animation: bubble-movement 4s infinite ease-in 0.6s;
+}
+
+.bubble-4 {
+	bottom: 5px;
+	left: 55%;
+	animation: bubble-movement 4s infinite ease-in 0.9s;
+}
+
+.bubble-5 {
+	bottom: 9px;
+	left: 70%;
+	animation: bubble-movement 4s infinite ease-in 1.2s;
+}
+
+.bubble-6 {
+	bottom: 2px;
+	left: 85%;
+	animation: bubble-movement 4s infinite ease-in 1.5s;
+}
+
+.bubble-7 {
+	bottom: 6px;
+	left: 15%;
+	animation: bubble-movement 4s infinite ease-in 1.8s;
+}
+
+.bubble-8 {
+	bottom: 4px;
+	left: 30%;
+	animation: bubble-movement 4s infinite ease-in 2.1s;
+}
+
+.bubble-9 {
+	bottom: 7px;
+	left: 45%;
+	animation: bubble-movement 4s infinite ease-in 2.4s;
+}
+
+.bubble-10 {
+	bottom: 3px;
+	left: 60%;
+	animation: bubble-movement 4s infinite ease-in 2.7s;
+}
+
+.bubble-11 {
+	bottom: 8px;
+	left: 75%;
+	animation: bubble-movement 3s infinite ease-in 0.4s;
+}
+
+.bubble-12 {
+	bottom: 5px;
+	left: 20%;
+	animation: bubble-movement 3s infinite ease-in 0.7s;
+}
+
+.bubble-13 {
+	bottom: 9px;
+	left: 35%;
+	animation: bubble-movement 3s infinite ease-in 1.0s;
+}
+
+.bubble-14 {
+	bottom: 6px;
+	left: 50%;
+	animation: bubble-movement 3s infinite ease-in 1.3s;
+}
+
+.bubble-15 {
+	bottom: 2px;
+	left: 65%;
+	animation: bubble-movement 3s infinite ease-in 1.6s;
+}
+
+.bubble-16 {
+	bottom: 7px;
+	left: 80%;
+	animation: bubble-movement 3s infinite ease-in 1.9s;
+}
+
+.bubble-17 {
+	bottom: 4px;
+	left: 90%;
+	animation: bubble-movement 3s infinite ease-in 2.2s;
+}
+
+.bubble-18 {
+	bottom: 3px;
+	left: 5%;
+	animation: bubble-movement 3s infinite ease-in 2.5s;
+}
+
+.bubble-19 {
+	bottom: 6px;
+	left: 30%;
+	animation: bubble-movement 3s infinite ease-in 2.8s;
+}
+
+.bubble-20 {
+	bottom: 9px;
+	left: 55%;
+	animation: bubble-movement 3s infinite ease-in 3.1s;
+}
+
+/* Definição da animação */
+@keyframes bubble-movement {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-100px);
 	}
 }
 
-.bubble-1{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 4s infinite ease-in random(300)*-.01s;
-}
-.bubble-2{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 4s infinite ease-in random(300)*-.01s;
-}
-.bubble-3{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 4s infinite ease-in random(300)*-.01s;
-}
-.bubble-4{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 4s infinite ease-in random(300)*-.01s;
-}
-.bubble-5{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 4s infinite ease-in random(300)*-.01s;
-}
-.bubble-6{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 4s infinite ease-in random(300)*-.01s;
-}
-.bubble-7{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 4s infinite ease-in random(300)*-.01s;
-}
-.bubble-8{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 4s infinite ease-in random(300)*-.01s;
-}
-.bubble-9{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 4s infinite ease-in random(300)*-.01s;
-}
-.bubble-10{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 4s infinite ease-in random(300)*-.01s;
-}
-.bubble-11{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 3s infinite ease-in random(300)*-.01s;
-}
-.bubble-12{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 3s infinite ease-in random(300)*-.01s;
-}
-.bubble-13{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 3s infinite ease-in random(300)*-.01s;
-}
-.bubble-14{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 3s infinite ease-in random(300)*-.01s;
-}
-.bubble-15{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 3s infinite ease-in random(300)*-.01s;
-}
-.bubble-16{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 3s infinite ease-in random(300)*-.01s;
-}
-.bubble-17{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 3s infinite ease-in random(300)*-.01s;
-}
-.bubble-18{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 3s infinite ease-in random(300)*-.01s;
-}
-.bubble-19{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 3s infinite ease-in random(300)*-.01s;
-}
-.bubble-20{
-	bottom: random(10) + 1px;
-	left: random(99) + 1%; 
-	animation: bubble-movement 3s infinite ease-in random(300)*-.01s;
-}
 
 
 
